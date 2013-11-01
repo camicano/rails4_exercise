@@ -1,0 +1,15 @@
+<h1><%= @author.name %></h1>
+
+<% if @books.present? %>
+	<% @books.each do |book| %>
+		<a href='/authors/<%= @author.id %>/books/<%= book.id %>'><p><%= book.title %></p></a>
+	<% end %>
+<% end %>
+
+<%= link_to "edit", edit_author_path(@author) %>
+
+<%= form_for @book, "/authors/#{@author.id}/books", :method => :post do |f| %>
+	<%= f.text_field :title %>
+	<%= f.submit %>
+<% end %> 
+

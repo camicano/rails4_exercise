@@ -1,0 +1,9 @@
+<h1>Edit</h1>
+
+<%= form_for @book do |f| %>
+<%= f.text_field :title %>
+<%= f.submit('edit') %>
+<% end %>
+
+<%= link_to "delete", {:controller => :author,
+      :action => 'destroy', :id => @book.id }, :method => :delete %>

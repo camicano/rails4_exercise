@@ -1,0 +1,12 @@
+<h1><%= @book %></h1>
+
+<% @words.each do |word| %>
+	<a href='/authors/<%= @author.id %>/books/<%= @book.id %>/words/<%= word.id %>'><p><%= word.word %></p></a>
+<% end %>
+
+<%= link_to "edit", edit_author_book_path(@book) %>
+
+<%= form_for @word do |f| %>
+<%= f.text_field :word %>
+<%= f.submit %>
+<% end %>
