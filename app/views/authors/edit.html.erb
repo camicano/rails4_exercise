@@ -1,8 +1,8 @@
 <h1>Edit</h1>
 
 <%= form_for @author do |f| %>
-<%= f.text_field :name %>
-<%= f.submit('edit') %>
+	<%= f.text_field :name %>
+	<%= f.submit('edit') %>
 <% end %>
 
 <%= link_to "delete", {:controller => :authors,
